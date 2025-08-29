@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Atmos 🌤️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Atmos** is a simple, responsive weather application built with **React** and **Tailwind CSS**. It allows users to quickly check current weather conditions and a 3-day forecast for any city or their current location.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## **Features**
 
-### `npm start`
+- Search for any city and get current weather information.
+- Automatically fetch weather for your current location using geolocation.
+- View:
+  - Temperature (Celsius/Fahrenheit toggle)
+  - Weather description and icon
+  - Wind speed
+  - Local time
+  - 3-day forecast including max/min temperature, UV index, sunrise/sunset
+- Dynamic background images based on weather conditions.
+- Keyboard navigation for search suggestions.
+- Mobile and desktop responsive.
+- Smooth loading indicators and graceful error handling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **Live Demo**
 
-### `npm test`
+The app is hosted on CodeSandbox: [Atmos Weather App](https://m96v78-3000.csb.app/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## **Getting Started**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### **Prerequisites**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js (v16 or higher recommended)
+- npm or yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### **Installation**
 
-### `npm run eject`
+1. Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   git clone https://github.com/Swethasahasri-28/atmos-app.git
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Install dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   ```bash
+    npm install
+    # or
+    yarn install
 
-## Learn More
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. Start the development server::
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+    npm start
+    # or
+    yarn start
 
-### Code Splitting
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4. Open your browser at http://localhost:3000 to see the app running.
 
-### Analyzing the Bundle Size
+## **Usage**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Type the name of a city in the search box.
+- Click on a suggested city or press **Enter** to fetch weather.
+- Click the location button to fetch weather for your current location.
+- Toggle between Celsius and Fahrenheit using the unit button.
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## **Technologies Used**
 
-### Advanced Configuration
+- **React** – Frontend framework
+- **Tailwind CSS** – Styling and responsive design
+- **Open-Meteo API** – Weather data
+- **Lucide React** – Icons
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## **Weather API**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- **Geocoding API:**  
+  `https://geocoding-api.open-meteo.com/v1/search?name={city_name}`
 
-### `npm run build` fails to minify
+- **Current & Forecast Weather:**  
+  `https://api.open-meteo.com/v1/forecast?latitude={lat}&longitude={lon}&current_weather=true&daily=temperature_2m_max,temperature_2m_min,weathercode,sunrise,sunset,uv_index_max&timezone=auto`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+No authentication is required.
+
+---
+
+## **Error Handling**
+
+- Alerts user if weather data cannot be fetched.
+- Displays empty suggestion list if no cities are found.
+- Loading spinner while fetching data.
